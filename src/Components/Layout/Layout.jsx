@@ -1,10 +1,11 @@
+import { Children } from 'react';
 import s from  './Layout.module.css';
 
  
 
 
 
-const Layout = ({id=0, title='Title',desc,bgImage,colorBg}) => {
+const Layout = ({id, title,children,bgImage,colorBg}) => {
     const sectionStyle = bgImage
        ?{ backgroundImage:  `url(${bgImage})`}
        :{ backgroundColor: colorBg}
@@ -16,8 +17,8 @@ const Layout = ({id=0, title='Title',desc,bgImage,colorBg}) => {
                 <h3> {  title}</h3>
                 <span className={s.separator}></span>
             </div>
-            <div className={s.desc+ '' + s.full}>
-                <p> { desc }</p>
+            <div className={`${s.desc}  ${s.full}`}>
+                {children}
             </div>
         </article>
     </div>
