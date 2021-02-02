@@ -1,11 +1,19 @@
 import s from './Pocemon.module.css'
 import cardBack from './../../assets/card-back-side.jpg'
+import  cn from "classnames";
+import { useState } from 'react';
 
 const PocemonCard  = ({name, id, img, type, values}) => {
+ const [isActive, setActive]= useState(false);
+   
+   const handleClick = () => {
+       setActive(!isActive);
+   }
+
 
 return (
-<div className={s.root}>
-      <div className={s.pokemonCard}>
+<div className={s.root} onClick={handleClick}>
+      <div className={cn(s.pokemonCard, {[s.active]:isActive})}>
         <div className={s.cardFront}>
             <div className={`${s.wrap} ${s.front}`}>
                 <div className={`${s.pokemon} ${s.type}`}>

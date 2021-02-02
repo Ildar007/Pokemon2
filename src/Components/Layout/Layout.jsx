@@ -1,4 +1,4 @@
-import { Children } from 'react';
+
 import s from  './Layout.module.css';
 
  
@@ -6,6 +6,7 @@ import s from  './Layout.module.css';
 
 
 const Layout = ({id, title,children,bgImage,colorBg}) => {
+
     const sectionStyle = bgImage
        ?{ backgroundImage:  `url(${bgImage})`}
        :{ backgroundColor: colorBg}
@@ -24,4 +25,4 @@ const Layout = ({id, title,children,bgImage,colorBg}) => {
     </div>
 </section>
 }
-export default Layout;
+export default Layout;  
